@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+A/B Test Statistics Visualization
+Проект представляет собой интерактивный линейный график для визуализации статистики A/B тестов, построенный на React с TypeScript. Позволяет анализировать динамику конверсии по вариациям с различными настройками отображения.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Посмотреть на GitHub Pages
+https://igor-polonskiy.github.io/Kameleoon_frontend_task/
 
-Currently, two official plugins are available:
+Выбранная библиотека для визуализации
+Для построения графиков была использована библиотека Recharts. Это мощная, но простая в использовании библиотека на React, которая предоставляет богатый набор компонентов для построения графиков и хорошо поддерживает TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Реализованные функции
+Основные требования
+📈 Линейный график конверсии: Отображение conversionRate (рассчитывается как (conversions / visits) * 100) для всех вариаций.
 
-## React Compiler
+📊 Процентное отображение: Все значения на оси Y и во всплывающих подсказках отображаются в процентах.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎯 Интерактивность при наведении: При наведении курсора на график отображается вертикальная линия и всплывающее окно (tooltip) с ежедневными данными для всех видимых вариаций.
 
-## Expanding the ESLint configuration
+🔘 Селектор вариаций: Панель управления для выбора отображаемых на графике линий. Минимум одна вариация всегда выбрана.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🗓️ Переключение День/Неделя: Агрегация и отображение данных с детализацией по дням или по неделям.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📏 Адаптивные оси: При переключении вариаций или изменении агрегации оси X и Y автоматически масштабируются под диапазон видимых данных.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+📱 Адаптивный дизайн: Полностью отзывчивый лейаут для экранов шириной от 671px до 1300px.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Бонусные функции
+🌗 Переключение темы: Реализован переключатель между светлой и тёмной темами.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🖼️ Экспорт в PNG: Добавлена кнопка для экспорта текущего состояния графика в PNG-файл.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+✒️ Стиль линий: Селектор для изменения типа отрисовки графика (Line, Smooth, Area).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Локальная установка и запуск
+Для запуска проекта на вашей локальной машине потребуется Node.js (версия 14 или выше рекомендуется).
+
+Клонируйте репозиторий:
+
+bash
+git clone https://github.com/Igor-Polonskiy/Kameleoon_frontend_task.git
+cd Kameleoon_frontend_task
+Установите зависимости:
+
+bash
+npm install
+Запустите проект в режиме разработки:
+
+bash
+npm run dev
+Приложение будет доступно по адресу http://localhost:5173 (или на другом порту, если 5173 занят).
+
+Доступные скрипты
+npm run dev - Запуск dev-сервера с Vite.
+
+npm run build - Сборка проекта для продакшена.
+
+npm run preview - Предпросмотр собранной версии проекта.
+
+npm run deploy - Деплой проекта на GitHub Pages.
+
+Технологический стек
+React 18 + TypeScript
+
+Recharts (библиотека для визуализации)
+
+CSS Modules (для стилизации компонентов)
+
+Vite (сборщик проекта)
+
+GitHub Pages (хостинг)

@@ -1,0 +1,21 @@
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  min-width: 671px;
+  max-width: 1300px;
+}
+
+.chartWrapper {
+  width: 100%;
+  min-width: 671px;
+  max-width: 1300px;
+  margin: 0 auto; 
+  padding: 0 16px;
+
+  @media (max-width: 670px) {
+    min-width: 100%;
+  }
+}
+

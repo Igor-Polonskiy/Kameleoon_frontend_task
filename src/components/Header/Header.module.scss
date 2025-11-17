@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  align-items:center;
+  justify-content: space-between;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+}
+
+.headeritem{
+  display: flex;
+   gap: 20px;
+  padding: 10px 20px;
+  align-items:center;
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: rotate(20deg);
+  }
+}
+.button {
+  
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+
+
+  &.theme {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+  }
+}
+
+.moon {
+  transition: transform 0.3s ease;
+}
+
+.sun {
+  transition: transform 0.3s ease;
+}
+.zoomButton{
+  width: 20px;
+  height: 20px;
+  border:1px solid black;
+  border-radius: 2px;
+  font: 24px;
+  margin: 5px;
+  display: inline-flex;
+  align-items:center;
+  justify-content: center;
+  
+  &.theme {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+     border:1px solid var(--button-color);;
+  }
+}
+
+
+
+
